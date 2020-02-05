@@ -7,6 +7,12 @@ class Alouette {
 	 * @return string
 	 */
 
+	 public static function titre($oiseau, $qualite) {
+		$resultat ='';
+		$resultat .=$oiseau.', '.$qualite.' '.$oiseau;
+		return $resultat;
+	 }
+
 
 	/** Méthode chanson
 	 * Retourne la chanson au complet dans un div.chanson
@@ -82,5 +88,10 @@ class Alouette {
 	 * @return string
 	 */
 
-
+	public static function actionMembre($action, $membre) {
+		$resultat = '';
+		$resultat .= '<div class="appel">Je te '.$action.' '.$membre.'</div>';
+		$resultat .= '<div class="reponse">Je te '.$action.$membre.'</div>';
+		return $resultat;
+	}
 }

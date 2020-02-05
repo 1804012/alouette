@@ -1,27 +1,28 @@
+<?php
+include("../donnees.inc.php");
+include("../Alouette.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="css/alouette.css" />
-	<title>Alouette, gentille Alouette</title>
+	<title><?php echo Alouette::titre('Kétoupa', 'connard de');
+			?></title>
 </head>
 
 <body>
 	<div id="app">
-		<header>Ma ritournelle</header>
-		<footer>Intégration Web 3</footer>
-		<nav>
-			<ul>
-				<li><a href="index.php">Alouette</a></li>
-				<li><a href="#">Ma chanson 1</a></li>
-				<li><a href="#">Ma chanson 2</a></li>
-				<li><a href="#">Ma chanson 3</a></li>
-				<li><a href="#">Composer ma chanson</a></li>
-			</ul>
-		</nav>
+		<?php echo include("../header.inc.php");
+		?>
+		<?php echo include("../footer.inc.php");
+		?>
+		<?php include("../menu.inc.php");
+		?>
 		<div class="body">
-			<h1>Alouette, gentille Alouette</h1>
+			<h1><?php echo Alouette::titre('Kétoupa', 'connard de');
+			?></h1>
 			<div class="chanson">
 				<div class="strophe">
 					<div class="refrain">
@@ -34,8 +35,8 @@
 							<div>Alouette, je te plumerai.</div>
 						</div>
 					</div>
-					<div class="appel">Je te plumerai la tête</div>
-					<div class="reponse">Je te plumerai la tête</div>
+					<?php echo Alouette::actionMembre('mangerai', 'le gros orteil');
+					?>
 					<div class="appel">Et la tête</div>
 					<div class="reponse">Et la tête</div>
 					<div class="appel">Alouette</div>
