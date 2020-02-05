@@ -7,7 +7,7 @@ class Alouette {
 	 * @return string
 	 */
 	static public function titre($oiseau, $qualite) {
-		return 'Alouette, gentille Alouette';
+		return $oiseau.', '.$qualite.' '.$oiseau;
 	}
 	/** Méthode chanson
 	 * Retourne la chanson au complet dans un div.chanson
@@ -24,18 +24,18 @@ class Alouette {
 		$resultat .= '<div class="strophe">';
 		$resultat .= '<div class="refrain">';
 		$resultat .= '<div class="appel">';
-		$resultat .= '<div>Alouette, gentille Alouette</div>';
-		$resultat .= '<div>Alouette, je te plumerai.</div>';
+		$resultat .= '<div>'.$oiseau.', '.$qualite.' '.$oiseau.'</div>';
+		$resultat .= '<div>'.$oiseau.', je te '.$action.'.</div>';
 		$resultat .= '</div>';
 		$resultat .= '<div class="reponse">';
-		$resultat .= '<div>Alouette, gentille Alouette</div>';
-		$resultat .= '<div>Alouette, je te plumerai.</div>';
+		$resultat .= '<div>'.$oiseau.', '.$qualite.' '.$oiseau.'</div>';
+		$resultat .= '<div>'.$oiseau.', je te '.$action.'.</div>';
 		$resultat .= '</div>';
 		$resultat .= '</div>';
-		$resultat .= '<div class="appel">Je te plumerai le dos</div>';
-		$resultat .= '<div class="reponse">Je te plumerai le dos</div>';
-		$resultat .= '<div class="appel">Et le dos</div>';
-		$resultat .= '<div class="reponse">Et le dos</div>';
+		$resultat .= '<div class="appel">Je te '.$action.' le '.$membres.'</div>';
+		$resultat .= '<div class="reponse">Je te '.$action.' le '.$membres.'</div>';
+		$resultat .= '<div class="appel">Et le '.$membres.'</div>';
+		$resultat .= '<div class="reponse">Et le '.$membres.'</div>';
 		$resultat .= '<div>Aaaah . . . </div>';
 		$resultat .= '</div>';
 		$resultat .= '</div>';
@@ -57,18 +57,18 @@ class Alouette {
 		$resultat .= '<div class="strophe">';
 		$resultat .= '<div class="refrain">';
 		$resultat .= '<div class="appel">';
-		$resultat .= '<div>Alouette, gentille Alouette</div>';
-		$resultat .= '<div>Alouette, je te plumerai.</div>';
+		$resultat .= '<div>'.$oiseau.', '.$qualite.' '.$oiseau.'</div>';
+		$resultat .= '<div>'.$oiseau.', je te '.$action.'.</div>';
 		$resultat .= '</div>';
 		$resultat .= '<div class="reponse">';
-		$resultat .= '<div>Alouette, gentille Alouette</div>';
-		$resultat .= '<div>Alouette, je te plumerai.</div>';
+		$resultat .= '<div>'.$oiseau.', '.$qualite.' '.$oiseau.'</div>';
+		$resultat .= '<div>'.$oiseau.', je te '.$action.'.</div>';
 		$resultat .= '</div>';
 		$resultat .= '</div>';
-		$resultat .= '<div class="appel">Je te plumerai le dos</div>';
-		$resultat .= '<div class="reponse">Je te plumerai le dos</div>';
-		$resultat .= '<div class="appel">Et le dos</div>';
-		$resultat .= '<div class="reponse">Et le dos</div>';
+		$resultat .= '<div class="appel">Je te '.$action.' le '.$membre.'</div>';
+		$resultat .= '<div class="reponse">Je te '.$action.' le '.$membre.'</div>';
+		$resultat .= '<div class="appel">Et le '.$membre.'</div>';
+		$resultat .= '<div class="reponse">Et le '.$membre.'</div>';
 		$resultat .= '<div>Aaaah . . . </div>';
 		$resultat .= '</div>';
 		return $resultat;
@@ -87,12 +87,12 @@ class Alouette {
 		$resultat = '';
 		$resultat .= '<div class="refrain">';
 		$resultat .= '<div class="appel">';
-		$resultat .= '<div>Alouette, gentille Alouette</div>';
-		$resultat .= '<div>Alouette, je te plumerai.</div>';
+		$resultat .= '<div>'.$oiseau.', '.$qualite.' '.$oiseau.'</div>';
+		$resultat .= '<div>'.$oiseau.', je te '.$action.'.</div>';
 		$resultat .= '</div>';
 		$resultat .= '<div class="reponse">';
-		$resultat .= '<div>Alouette, gentille Alouette</div>';
-		$resultat .= '<div>Alouette, je te plumerai.</div>';
+		$resultat .= '<div>'.$oiseau.', '.$qualite.' '.$oiseau.'</div>';
+		$resultat .= '<div>'.$oiseau.', je te '.$action.'.</div>';
 		$resultat .= '</div>';
 		$resultat .= '</div>';
 		return $resultat;
@@ -111,10 +111,10 @@ class Alouette {
 	 */
 	static public function couplet($oiseau, $action, $membre, $membresDits) {
 		$resultat = '';
-		$resultat .= '<div class="appel">Je te plumerai le dos</div>';
-		$resultat .= '<div class="reponse">Je te plumerai le dos</div>';
-		$resultat .= '<div class="appel">Et le dos</div>';
-		$resultat .= '<div class="reponse">Et le dos</div>';
+		$resultat .= '<div class="appel">Je te '.$action.' le '.$membre.'</div>';
+		$resultat .= '<div class="reponse">Je te '.$action.' le '.$membre.'</div>';
+		$resultat .= '<div class="appel">Et le '.$membre.'</div>';
+		$resultat .= '<div class="reponse">Et le '.$membre.'</div>';
 		$resultat .= '<div>Aaaah . . . </div>';
 		return $resultat;
 	}
@@ -126,8 +126,8 @@ class Alouette {
 	 */
 	static public function appelReponse($phrase) {
 		$resultat = '';
-		$resultat .= '<div class="appel">Et le dos</div>';
-		$resultat .= '<div class="reponse">Et le dos</div>';
+		$resultat .= '<div class="appel">'.$phrase.'</div>';
+		$resultat .= '<div class="reponse">'.$phrase.'</div>';
 		return $resultat;
 	}
 	/** Méthode enumMembres
@@ -146,8 +146,8 @@ class Alouette {
 	 * @return string
 	 */
 	static public function actionMembre($action, $membre) {
-		$resultat .= '<div class="appel">Je te plumerai le dos</div>';
-		$resultat .= '<div class="reponse">Je te plumerai le dos</div>';
+		$resultat .= '<div class="appel">Je te '.$action.' le '.$membres.'</div>';
+		$resultat .= '<div class="reponse">Je te '.$action.' le '.$membres.'</div>';
 		return $resultat;
 	}
 }
