@@ -9,6 +9,8 @@ class Alouette {
 	static public function titre($oiseau, $qualite) {
 		return $oiseau.', '.$qualite.' '.$oiseau;
 	}
+
+
 	/** Méthode chanson
 	 * Retourne la chanson au complet dans un div.chanson
 	 * @param string $oiseau - Le nom de l'oiseau (Alouette)
@@ -29,6 +31,8 @@ class Alouette {
 		$resultat .= '</div>';
 		return $resultat;
 	}
+
+
 	/** Méthode strophe
 	 * Retourne une strophe au complet
 	 * @param string $oiseau - Le nom de l'oiseau (Alouette)
@@ -48,6 +52,8 @@ class Alouette {
 		$resultat .= '</div>';
 		return $resultat;
 	}
+
+
 	/** Méthode refrain
 	 * Retourne les 2 phrases du refrain dans des div. Le tout répété 2 fois à l'aide
 	 *   de appelReponse et regroupé dans un dans un div.refrain
@@ -66,6 +72,8 @@ class Alouette {
 		$resultat = '<div class="refrain">'.$resultat.'</div>';
 		return $resultat;
 	}
+
+
 	/** Méthode couplet
 	 * Génère l'appel puis la réponse d'une phrase de la chanson passée en paramètre.
 	 * @param string $oiseau - Le nom de l'oiseau (Alouette)
@@ -86,6 +94,8 @@ class Alouette {
 		$resultat .= '<div>Aaaah . . . </div>';
 		return $resultat;
 	}
+
+
 	/** Méthode appelReponse
 	 * Génère l'appel puis la réponse d'une phrase de la chanson passée en paramètre.
 	 * @param string $phrase - La phrase à répéter
@@ -98,6 +108,8 @@ class Alouette {
 		$resultat .= '<div class="reponse">'.$phrase.'</div>';
 		return $resultat;
 	}
+
+
 	/** Méthode enumMembres
 	 * Génère l'énumération des membres passée en paramètre.
 	 * @param array $membres - Les membres à énumérer
@@ -111,6 +123,8 @@ class Alouette {
 		}
 		return $resultat;
 	}
+
+
 	/** Méthode actionMembre
 	 * Génère la menace faite à l'oiseau sur son membre.
 	 * @param string $action - L'action
@@ -122,4 +136,38 @@ class Alouette {
 		$resultat = self::appelReponse('Je '.$action.' '.$membre);
 		return $resultat;
 	}
+
+	static public function formulaire($donnees){
+		$resultat ='';
+		$resultat .='<form action="perso.php" method="get">';
+		$resultat .='<div class="area">';
+		$resultat .='<label for="oiseau">Oiseau</label>';
+		$resultat .='<input type="text" name="oiseau" id="oiseau" value="'.$donnees['oiseau'].'"/>';
+		$resultat .='</div>';
+		$resultat .='<div>';
+		$resultat .='<label for="qualite">Qualité</label>';
+		$resultat .='<input type="text" name="qualite" id="qualite" value="'.$donnees['qualite'].'"/>';
+		$resultat .='</div>';
+		$resultat .='<div>';
+		$resultat .='<label for="action">Action</label>';
+		$resultat .='<input type="text" name="action" id="action" value="'.$donnees['action'].'"/>';
+		$resultat .='</div>';
+		$resultat .='<div>';
+		$resultat .='<label for="membres">Membres</label>';
+		$resultat .='<textarea name="membres" id="membres" cols="30" rows="10">';
+		// foreach ($donnees['membres'] as $idMembre => $membre) {
+		// 	$resultat .= $membre."\n";
+		// }
+		$resultat .= implode("\n", $donnees['membres']);
+		$resultat .='</textarea>';
+		$resultat .='</div>';
+		$resultat .='<div>';
+		$resultat .='<input type="submit" value="Composer" class="submit"/>';
+		$resultat .='</div>';
+		$resultat .='</form>';
+		return $resultat;
+	}
+
 }
+
+		
